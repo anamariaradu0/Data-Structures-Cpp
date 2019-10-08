@@ -1,8 +1,6 @@
 Nume, prenume: Radu Ana-Maria
-Grupa, seria: 314CA
 
-Data inceperii temei: 29-03-2019
-Data finalizarii temei: 05-04-2019
+Data finalizarii proiectului: 05-04-2019
 
 Problemele intampinate:
 	Gasirea unei modalitati de a sorta datele in functie de mai multe
@@ -46,7 +44,7 @@ Algoritmul utilizat:
 	C. CoinFlip - Are o probabilitate mai mica sa returneze acelasi lucru
 	de mai multe ori, probabilitate decisa de coin_probability.
 
-Complexitatea temei:
+Complexitatea proiectului:
 	Nivelul de complexitate pentru implementarea SkipList-ului nu a fost
 	mare, deoarece notiunile necesare erau cunoscute din cadrul
 	laboratorului de liste simplu si dublu inlantuite. Dificultatea
@@ -54,8 +52,7 @@ Complexitatea temei:
 	in SkipList nu puteau fi stocate date in mod persistent, de aceea el
 	trebuia folosit pentru sortari. In acelasi timp, nu se putea face
 	overloading pentru un operator din metoda de insertie care sa
-	indeplineasca toate criteriile cerute. In final, cred ca tema a fost
-	doar putin mai dificila decat ma asteptam.
+	indeplineasca toate criteriile cerute.
 
 Alte precizari:
 	-
