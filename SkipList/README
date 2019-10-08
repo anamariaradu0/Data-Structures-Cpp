@@ -1,0 +1,62 @@
+Nume, prenume: Radu Ana-Maria
+Grupa, seria: 314CA
+
+Data inceperii temei: 29-03-2019
+Data finalizarii temei: 05-04-2019
+
+Problemele intampinate:
+	Gasirea unei modalitati de a sorta datele in functie de mai multe
+	criterii, pastrand, in acelasi timp, genericitatea SkipList-ului. Am
+	rezolvat aceasta problema construind array-uri auxiliare, pastrand
+	inserarea in SkipList numai pentru sortarea in functie de punctajul
+	total.
+
+Algoritmul utilizat:
+	- Array-ul racers_array retine in mod persistent date despre fiecare
+	racer, stocate in functie de id. La fiecare citire a unei linii de
+	timpi, se actualizeaza in racers_array timpul unui racer si punctajul
+	sau total. Atunci cand timpul citit este diferit de 0, datele despre
+	racer sunt introduse in SkipList-ul timeboard, pentru a fi sortate in
+	functie de timp.
+	- Punctajul se acorda racerilor din timeboard, respectand regula de
+	paritate a numarului curent de raceri.
+	- La fiecare iteratie, se actualizeaza datele din printed_racers.
+	Se copiaza continutul din racers_array, se sorteaza in functie de cele
+	doua criterii (folosind std::sort si facand overloading pentru
+	operatorul '<') si se seteaza pozitia curenta in clasament a racerilor,
+	care va fi indexul i (deoarece sortarea este facuta descrescator, iar
+	indexul din printed_racers nu mai reprezinta id-ul).
+	- La intalnirea comenzii de 'print', se printeaza datele din
+	printed_racers, deja actualizate dupa calcularea diferentei de nivel.
+	Se actualizeaza nivelul precedent din racers_array cu nivelul curent
+	al racerului.
+	- Implementarea SkipList-ului se bazeaza, in principal, pe metodele de
+	insertie si cautare, dar a fost implementata si metoda de stergere a
+	unui element (care nu se foloseste in restul temei, dar e importanta
+	pentru pastrarea genericitatii structurii de date).
+	A. Insertia - Metoda de cautare va returna nodul de dinaintea
+	pozitiei unde trebuie sa fie inserat noul nod. Se apeleaza metoda
+	auxiliara skip_insert_after, care reface "legaturile" celor 4 pointeri.
+	Se insereaza pe niveluri superioare in functie de ceea ce returneaza
+	metoda de CoinFlip.
+	B. Stergerea - Se sterge intreaga coloana care contine 'data' cautata.
+	Se cauta elementul care trebuie sters si apoi se refac "legaturile"
+	pointerilor, pornind de la primul nivel si mergand pana la ultimul
+	pe care se afla 'data'.
+	C. CoinFlip - Are o probabilitate mai mica sa returneze acelasi lucru
+	de mai multe ori, probabilitate decisa de coin_probability.
+
+Complexitatea temei:
+	Nivelul de complexitate pentru implementarea SkipList-ului nu a fost
+	mare, deoarece notiunile necesare erau cunoscute din cadrul
+	laboratorului de liste simplu si dublu inlantuite. Dificultatea
+	rezolvarii a venit din gasirea unei metode eficiente. Consider ca
+	in SkipList nu puteau fi stocate date in mod persistent, de aceea el
+	trebuia folosit pentru sortari. In acelasi timp, nu se putea face
+	overloading pentru un operator din metoda de insertie care sa
+	indeplineasca toate criteriile cerute. In final, cred ca tema a fost
+	doar putin mai dificila decat ma asteptam.
+
+Alte precizari:
+	-
+
